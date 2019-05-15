@@ -1,0 +1,21 @@
+#InputField{
+  background: white;
+  border: 5px solid black;
+  border-radius: 15px;
+}
+#Form{
+  padding: 5%;
+}
+#FormELement{
+  color: red;
+}
+#Label{
+  font-size: 32px;
+}
+#LoginButton{
+  margin-bottom: 10px;
+  float: left;
+}
+/* .form-control{
+  margin-left: 400px; */
+/* } */

@@ -1,0 +1,26 @@
+#sorting{
+  background-color: white;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center
+}
+.sortText{
+  font-size: 20px;
+  color: black;
+}
+.sortEl{
+  align-items:center;
+  background-color: red;
+  vertical-align: middle;
+}
+.radiobut{
+  padding-top: 5px;
+}
+#sortheader{
+  color: black;
+}

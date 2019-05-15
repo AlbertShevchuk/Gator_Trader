@@ -1,0 +1,40 @@
+body{
+  background-color: purple;
+  min-width: 500px;
+}
+
+#categories{
+  margin: 50px;
+  background-color: gray;
+  font-size: 24pt;
+}
+#categoryBar{
+  background-color: gray;
+  margin: 15px;
+  margin-bottom: 45px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+}
+#categoryButtons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#homeTitle{
+  background-color: gray;
+  font-size: 24pt;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  margin-bottom: 5px;
+}
+#itemCount{
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}

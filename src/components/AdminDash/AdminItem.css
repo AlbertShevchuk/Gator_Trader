@@ -1,0 +1,19 @@
+#divider {
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+#cardimg1{
+  padding: 10px;
+  border-radius: 25px;
+}
+#cardlisting1{
+  background-color: grey;
+  border: solid white 3px;
+}
+#cardbody1{
+  background-color: #D4AF37;
+}
+#cardCol1{
+  margin: 10px;
+}

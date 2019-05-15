@@ -1,0 +1,49 @@
+#about-container{
+  padding-top: 20px;
+background-color: #38b1c1;
+border-bottom: 6px solid #252828;
+border-left: 6px solid #252828;
+border-right: 6px solid #252828;
+}
+#about-person{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  display: inline-block;
+  max-height: 350px;
+}
+#about-picture{
+  border-radius: 50%;
+}
+#title{
+  margin-bottom: 5%;
+}
+#picture-container{
+}
+#about-name{
+  margin-top: 15px;
+  color: white;
+  font-size: 20px;
+  font-family:serif;
+  text-align: center;
+  border: 3px solid #252818;
+  background-color: #f97e31;
+}
+#about-textbox{
+  vertical-align: top;
+  background-color: #fc8e49;
+  display:inline-block;
+  max-width: 550px;
+  height: 250px;
+  border: 5px solid #222;
+  outline-style: ridge;
+  overflow:hidden;
+}
+#about-text{
+  word-wrap: break-word;
+  color: white;
+  font-size: 17px;
+  font-family:serif;
+  text-align: justify;
+  margin:10px;
+}

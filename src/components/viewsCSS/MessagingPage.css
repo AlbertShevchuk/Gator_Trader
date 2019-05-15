@@ -1,0 +1,84 @@
+#messageForm{
+
+}
+#msgPage{
+}
+#test{
+}
+#msgContainer{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  max-width: 100%;
+  border-bottom: 2px solid black;
+
+}
+#msg{
+margin: 20px;
+}
+#msgHead{
+  font-size: 20px;
+  color: black;
+  display: inline-block;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+#msgHeadText{
+  padding-top: 10px;
+}
+#emptyMsg{
+  text-align: center;
+  color:black;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center
+}
+.mytext{
+  color: white;
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  display:inline-block;
+  border-radius: 5px;
+  background-color: #008ECC;
+}
+.msgtext{
+  color: 333435;
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  display:inline-block;
+  border-radius: 5px;
+  background-color: white;
+}
+#messages{
+  background-color: grey;
+  border: 2px solid black;
+  height: 50vh;
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+}
+#msginput{
+  max-width: 100%;
+  border: 2px solid black;
+}
+#construct{
+  font-size: 20px;
+  color:white;
+}
+#user{
+  font-size: 20px;
+  color:white;
+}
+#sendmessage{
+  width: 200vw;
+  padding: 10px;
+}

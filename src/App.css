@@ -1,0 +1,46 @@
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+.App-button{
+  background-color: red;
+}
+
+.App-header {
+  background-color: #f97e31;
+  height: 145px;
+  text-align: center;
+}
+#team{
+  color: white;
+  font-size: 40px;
+}
+#school{
+  color: white;
+  font-size: 30px;
+}
+.App-title {
+  font-size: 1.5em;
+}
+.App-intro {
+  font-size: large;
+
+}
+#about-buttons{
+  border: 5px solid #222;
+  padding-top:10px;
+  padding-bottom: 10px;
+}
+#buttons{
+  padding-left: 10px;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App{
+  border: 5px solid #f97e31;
+  background-color: #f97e31;
+  height: 175px;
+}

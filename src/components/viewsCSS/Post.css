@@ -1,0 +1,14 @@
+#title{
+  background: #d4d4d4;
+  border: black;
+  border-width: 3px;
+  border-radius: 8px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+}
+#postform{
+  margin-top: 10px;
+}
