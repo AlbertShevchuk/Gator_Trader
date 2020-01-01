@@ -2,15 +2,11 @@
     border: 2px solid black;
     background-color: #D4AF37;
 }
-.errorMsg{
-  color: white;
-}
 #Form{
   padding: 5%;
 }
 #FormElement{
-  color: #333435;
-  font-weight: bold
+  color: #505050;
 }
 .input{
   max-width: 100%
@@ -22,21 +18,5 @@
   max-width: 20%
 }
 #img{
-  max-width: 100%
-}
-#desc{
-  height: 15vh;
-  vertical-align: text-top;
-}
-#submitButton{
-  float: right;
-}
-#uName{
-  max-width: 60%;
-}
-#itemTitle{
-  max-width: 80%;
-}
-#regbut{
-  margin-top: 5%;
+  max-width: 50%
 }

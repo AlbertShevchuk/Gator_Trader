@@ -1,13 +1,3 @@
-/*
-CSC648-01 Team01
-Date: 12-22-2018
-Team Lead: Marcus Mertilien
-Frontend Lead: Alex Ha
-Backend Lead: Raul Serrano
-
-Collaborators: Alex Ha
-Login page is the view that displays the registration form and the login form.
-*/
 import React, {Component} from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import {Button,Row,Col} from 'reactstrap';

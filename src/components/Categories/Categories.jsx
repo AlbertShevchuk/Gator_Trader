@@ -6,13 +6,11 @@ const API_URL = 'http://ec2-50-112-37-217.us-west-2.compute.amazonaws.com/';
 class Categories extends Component{
   constructor(props){
     super(props)
-    this.state = {
-      query: ""
-    }
   }
 
   SearchByCategory = (query) => {
-    this.props.callbackFromParent(query)
+    console.log(query)
+    this.FetchResults(query)
   }
   FetchResults = (query) =>{
     /*
@@ -23,8 +21,8 @@ class Categories extends Component{
     we use .then again to map that json into an array of items[name,price,desc,path]
     we use .then again to call the callback function of the parent sending the result of the .then()
     */
-    console.log(API_URL + 'recent/' + query)
-    fetch(API_URL + 'recent/' + query)
+    console.log(API_URL + 'image/search/' + query)
+    fetch(API_URL + 'image/search/' + query)
     //take response turn into json
     .then(response => { return response.json() } )
     //take result map all items
@@ -35,35 +33,32 @@ class Categories extends Component{
         item.description,
         (API_URL + item.path)
       ])}))
-      .then(items => this.props.callbackFromParent(
-        [items,
-        this.state.query] ))
+      .then(items => this.props.callbackFromParent(items))
   }
   render(){
     return(
-      <div class="container-fluid">
-        <Row>
-          <Col  id="categoryButtons" sm="4" lg="2">
-            <Button onClick={() => this.SearchByCategory("cat")}> Cats </Button>
-          </Col>
-          <Col id="categoryButtons" sm="4" lg="2">
-            <Button onClick={() => this.SearchByCategory("calculator")}> Calculators </Button>
-          </Col>
-          <Col  id="categoryButtons" sm="4" lg="2">
-            <Button onClick={() => this.SearchByCategory("Laptop")}> Laptops </Button>
-          </Col>
-          <Col  id="categoryButtons" lg="2">
-            <Button onClick={() => this.SearchByCategory("test")}> Test </Button>
-          </Col>
-          <Col  id="categoryButtons" sm="4" lg="2">
-            <Button onClick={() => this.SearchByCategory("")}> Empty </Button>
-          </Col>
-          <Col  id="categoryButtons" sm="4" lg="2">
-            <Button onClick={() => this.SearchByCategory("")}> Empty </Button>
-          </Col>
-        </Row>
-      </div>
-    )}
+      <Row>
+        <Col lg = '2'>
+          <Button onClick={() => this.SearchByCategory("cat")}>Cats</Button>
+        </Col>
+        <Col lg = '2'>
+          <Button onClick={() => this.SearchByCategory("calculator")}> Calculators </Button>
+        </Col>
+        <Col lg = '2'>
+          <Button onClick={() => this.SearchByCategory("Laptop")}> Laptops </Button>
+        </Col>
+        <Col lg ='2'>
+          <Button onClick={() => this.SearchByCategory("test")}> Test </Button>
+        </Col>
+        <Col lg ='2'>
+          <Button onClick={() => this.SearchByCategory("")}> Empty </Button>
+        </Col>
+        <Col lg ='2'>
+          <Button onClick={() => this.SearchByCategory("")}> Empty </Button>
+        </Col>
+      </Row>
+    )
+  }
 }
 
 export default Categories;

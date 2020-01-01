@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Row, Col, Button,
     Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
+import '../viewsCSS/Listing.css';
 import {browserHistory} from 'react-router';
 import './AdminItem.css';
 

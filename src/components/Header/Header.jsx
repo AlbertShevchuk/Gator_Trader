@@ -1,15 +1,3 @@
-/*
-CSC648-01 Team01
-Date: 12-22-2018
-Team Lead: Marcus Mertilien
-Frontend Lead: Alex Ha
-Backend Lead: Raul Serrano
-
-Collaborators: Marcus Mertilien, Alex Ha
-
-Header is the component used on every view on our website which displays navigation throughout the website.
-It also keeps track of whether or not the user is logged in.
-*/
 import React, {Component} from 'react';
 import './Header.css';
 import {Collapse,
@@ -26,12 +14,10 @@ export default class Header extends Component{
     super(props);
     this.toggle = this.toggle.bind(this);
     this.goHome = this.goHome.bind(this);
-    this.goToResults = this.goToResults.bind(this);
     this.state = {
       loggedIn: false,
       username: "",
-      isOpen: false,
-      query: ""
+      isOpen: false
     };
   }
   toggle(){
@@ -41,7 +27,7 @@ export default class Header extends Component{
   }
   toggleLogin(){
     this.setState({
-      loggedIn: this.state.loggedIn
+      loggedIn: !this.state.loggedIn
     })
   }
   userStatus(){
@@ -59,14 +45,6 @@ export default class Header extends Component{
       )
     }
   }
-  loggedIn(){
-    if(this.state.loggedIn)
-      return(
-        <Button id="LogoutButton" onClick={() => this.Logout()}>
-          Logout
-        </Button>
-      )
-  }
   componentWillMount(){
 this.props.headerState ?
         this.setState({
@@ -83,17 +61,6 @@ this.props.headerState ?
     if(this.props.headerState !== prevProps.headerState){
       this.updateHeader(this.props.headerState)
     }
-  }
-  ReceiveQuery = (query) => {
-    this.setState({
-        query: query
-    }, this.goToResults())
-  }
-  goToResults(){
-    browserHistory.push({
-      pathname: 'results',
-      query: this.state.query
-    })
   }
   updateHeader(newProps){
     this.setState({
@@ -122,15 +89,10 @@ this.props.headerState ?
     })
   }
   goToPost(){
-    if(this.state.loggedIn){
-      browserHistory.push({
-        pathname: 'post',
-        state: this.state
-      })
-    }
-    else{
-      this.goToLogin()
-    }
+    browserHistory.push({
+      pathname: 'post',
+      state: this.state
+    })
   }
 
   goToAdmin(){
@@ -141,52 +103,36 @@ this.props.headerState ?
   }
 
   goToSeller() {
-      browserHistory.push({
-        pathname: 'seller',
-        state: this.state
-      })
-  }
-  goToAbout(){
     browserHistory.push({
-      pathname: 'about',
+      pathname: 'seller',
       state: this.state
     })
   }
 
-  Logout(){
-    this.setState({
-      loggedIn: false,
-      username: "",
-      isOpen: false
-    })
-    browserHistory.push("")
-  }
   render(){
     return (
-      <Row id = 'header' >
+      <div id="header">
       <Row>
-        <Col sm='12' lg='12' id="disclaimer">
-          SFSU-Fulda Software Engineering Project CSC 648-848, Fall 2018.  For Demonstration Only
-        </Col>
-      </Row>
         <Navbar id ="NavMain" lg = '12' color="grey" light expand="lg">
           <Col sm = '3' lg='3'>
-            <Button id="homeBtn">
-              <NavbarBrand id = "HomeButton" onClick={this.goHome}>
-                <img src={require('../../assets/Gator.gif')} width="120" height ="75"/> Gator Trader
-              </NavbarBrand>
-            </Button>
+            <NavbarBrand id = "HomeButton" onClick={this.goHome}>
+              <img src={require('../../assets/Gator.gif')} width="120" height ="75"/> Gator Trader
+            </NavbarBrand>
           </Col>
-
           <Col sm='9' lg='9'>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar right>
-                <NavItem id = "About">
+                <NavItem id = "Admin">
                   <NavLink/>
-                  <Button id="AboutButton" onClick = {() => this.goToAbout()}>
-                    About
+                  <Button id="AdminDash" onClick = {() => this.goToAdmin()}>
+                    Admin
                   </Button>
+                </NavItem>
+
+                <NavItem id = "NavUser">
+                  <NavLink />
+                  {this.userStatus()}
                 </NavItem>
                 <NavItem id = "NavSell">
                   <NavLink/>
@@ -194,25 +140,18 @@ this.props.headerState ?
                     Sell
                   </Button>
                 </NavItem>
-                {/*<NavItem id = "Admin">
+                <NavItem id = "NavSell">
                   <NavLink/>
-                  <Button id="AdminDash" onClick = {() => this.goToAdmin()}>
-                    Admin
+                  <Button id="LoginToggle" onClick = {() => this.toggleLogin()}>
+                    Login Toggle
                   </Button>
-                </NavItem>*/}
-                <NavItem id = "NavUser">
-                  <NavLink />
-                  {this.userStatus()}
-                </NavItem>
-                <NavItem id = "NavUser">
-                  <NavLink />
-                  {this.loggedIn()}
                 </NavItem>
               </Nav>
             </Collapse>
           </Col>
         </Navbar>
       </Row>
+    </div>
     );
   }
 }

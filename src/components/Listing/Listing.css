@@ -1,64 +1,50 @@
 #listings{
-  margin:15px;
+  padding-left: 50px;
+  margin: auto;
   background-color: gray;
   font-size: 18pt;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
-}
-#cardImgBtn{
-  background-color: rgba(0,0,0,0);
-  border: 0px;
 }
 #cardimg{
   padding: 10px;
   border-radius: 25px;
-  align-items: center;
-  width: 200px;
-  height: 200px;
 }
 #cardlisting{
-  background-color: #D4AF37;
-  align-items: center;
-  border-radius: 15px;
-  -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+  background-color: grey;
+  border: solid white 3px;
 }
-
+#cardbody{
+  background-color: #D4AF37;
+}
 #cardCol{
-  margin-top: 10px;
-  min-height: 600px;
+  margin: 10px;
 }
 #cardimg{
+  align-items: center;
+  max-width: 300px;
+  max-height: 300px;
 }
 #cardbody{
   min-width: 350px;
   min-height: 350px;
-  background-color: #D4AF37;
-  overflow: hidden;
-  border: 3px solid white;
+  max-width: 350px;
+  max-height: 350px;
+  border-style: solid;
+  border-width: 3px;
   border-radius: 8px;
-  margin: 5px;
+  border-color: black;
 }
 #cardtext{
   max-width: 300px;
-  max-height: 180px;
-  min-height: 180px;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 #cardtitle{
   font-weight: bold;
-  font-size: 25px;
-  overflow: hidden;
-  max-height: 30px;
-  text-overflow: ellipsis;
+  font-size:35px;
 }
 #cardsubtitle{
+
   margin: 5px;
   font-size: 25px;
-}
-#cardCol{
+
+
+
 }

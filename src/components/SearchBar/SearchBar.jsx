@@ -1,31 +1,8 @@
-/*
-CSC648-01 Team01
-Date: 12-22-2018
-Team Lead: Marcus Mertilien
-Frontend Lead: Alex Ha
-Backend Lead: Raul Serrano
-
-Collaborators: Marcus Mertilien, Alex Ha, Michael Phan
-SearchBar is the component that holds the input form for searching for items, as well
-as the categories dropdown menu. It returns a query to the results page which is then
-used to fetch the appopriate items from our database. It keeps track of whether
-the user searched by %like or by category.
-*/
-
 import React, { Component } from 'react';
-import {Form} from 'reactstrap';
 import {browserHistory} from 'react-router';
 import Listing from '../Listing/Listing';
-import './SearchBar.css';
-import {Button,
-        ButtonGroup,
-        Row,
-        Col,
-        ButtonDropdown,
-        DropdownToggle,
-        DropdownMenu,
-        DropdownItem
-      } from 'reactstrap';
+import {Button, ButtonGroup, Row, Col,
+        ButtonDropdown,DropdownToggle, DropdownMenu,DropdownItem} from 'reactstrap';
 
 
 const API_URL = 'http://ec2-50-112-37-217.us-west-2.compute.amazonaws.com/';
@@ -66,24 +43,24 @@ class SearchBar extends Component {
         item.description,
         (API_URL + item.path)
       ])}))
-      .then(items => this.props.callbackFromParent(this.search.value))
+      .then(items => this.props.callbackFromParent(items))
   }
   SearchByCategory = (query) => {
-    this.props.CategoryCallback(query)
+    this.FetchResults("image/" + query)
   }
   onSubmit = (e) => {
     e.preventDefault();
     if(this.search.value == ""){
-      this.props.SearchCallback("")
+      this.FetchResults("allselling")
     }
     else{
-      this.props.SearchCallback(this.state.query)
+      this.FetchResults(this.state.query)
     }
   }
 
   handleInputChange = () => {
       this.setState({
-        query:this.search.value
+        query:'image/search/' + this.search.value
       })
   }
 
@@ -95,53 +72,35 @@ class SearchBar extends Component {
   render() {
     {console.log()}
     return (
-    <div id = "searchContents" class="container-fluid">
+    <div>
       <Row>
-      <Col lg="6 offset-lg-3" >
-        <Row>
-          <Col sm="2" lg="2">
-          <ButtonDropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle id="categoryDropdown"caret>
+        <Col>
+          <div>
+          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+            <DropdownToggle caret>
               Categories
-            </DropdownToggle>
+              </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem onClick={() =>
-                this.SearchByCategory("")}>All</DropdownItem>
-                <DropdownItem divider />
-              <DropdownItem  onClick={() =>
-                this.SearchByCategory("textbooks")}>Textbooks</DropdownItem>
-                <DropdownItem divider />
-              <DropdownItem  onClick={() =>
-                this.SearchByCategory("electronics")}>Electronics</DropdownItem>
-                <DropdownItem divider />
-              <DropdownItem onClick={() =>
-                this.SearchByCategory("furniture")}>Furniture</DropdownItem>
-                <DropdownItem divider />
-              <DropdownItem onClick={() =>
-                this.SearchByCategory("computers")}>Computers</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() =>
-                  this.SearchByCategory("pets")}>Pets</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem onClick={() =>
-                    this.SearchByCategory("cars")}>Cars</DropdownItem>
-
+              <DropdownItem divider />
+              <DropdownItem id = "None" onClick={() => this.SearchByCategory("cat")}>Cats</DropdownItem>
+              <DropdownItem id = "Star" onClick={() => this.SearchByCategory("calculator")}>Calculators</DropdownItem>
+              <DropdownItem id = "Star2"onClick={() => this.SearchByCategory("laptop")}>Laptops</DropdownItem>
+              <DropdownItem id = "None" onClick={() => this.SearchByCategory("test")}>Test</DropdownItem>
             </DropdownMenu>
           </ButtonDropdown>
+          </div>
         </Col>
-        <Col sm="10" lg="10" id="searchCol">
-          <Form id="searchForm" onSubmit={this.onSubmit}>
-            <input id="searchInput" placeholder="Search for....."
+        <Col>
+          <form onSubmit={this.onSubmit}>
+            <input placeholder="Search for....."
             ref={input => this.search = input}
             onChange={this.handleInputChange}
-             maxlength="40"
+             maxlength="20"
             />
-            <Button id="searchButton">
+            <Button id = "searchbutton">
             Search
             </Button>
-          </Form>
-          </Col>
-        </Row>
+          </form>
         </Col>
       </Row>
     </div>

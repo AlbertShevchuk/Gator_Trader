@@ -1,5 +1,5 @@
 #InputField{
-  background: white;
+  background: gray;
   border: 5px solid black;
   border-radius: 15px;
 }
@@ -13,8 +13,8 @@
   font-size: 32px;
 }
 #LoginButton{
-  margin-bottom: 10px;
-  float: left;
+  color: #D4AF37;
+  float: right;
 }
 /* .form-control{
   margin-left: 400px; */

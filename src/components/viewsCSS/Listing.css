@@ -1,0 +1,22 @@
+#cardimg{
+  padding: 10px;
+  border-radius: 25px;
+  width: 200px;
+  height: 200px;
+}
+#cardlisting{
+  background-color: grey;
+  border: solid white 3px;
+  align-items: center;
+}
+#cardbody{
+  background-color: #D4AF37;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+}
+#cardCol{
+  margin: 10px;
+}
